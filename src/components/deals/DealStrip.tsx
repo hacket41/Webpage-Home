@@ -1,26 +1,44 @@
 import React from 'react';
 
 const deals = [
-  { label: 'Up to 40% off', color: 'bg-purple-500' },
-  { label: 'Vegan', discount: '-40%' },
-  { label: 'Sushi', discount: '-20%' },
-  { label: 'Pizza & Fast food', discount: '-17%' },
+  { label: 'Pizza & Fast food' },
+  { label: 'Vegan' },
+  { label: 'Sushi' },
+  { label: 'Others' },
 ];
 
-const DealStrip: React.FC = () => (
-  <section className="px-4 py-6">
-    <h2 className="text-lg font-semibold mb-4">Exclusive deals</h2>
-    <div className="flex gap-4 overflow-x-auto">
-      {deals.map((d, i) => (
-        <div
-          key={i}
-          className={`shrink-0 w-36 h-36 rounded-xl text-white flex flex-col justify-end p-3 ${d.color || 'bg-gray-200'}`}
-        >
-          <p className="font-bold">{d.label}</p>
-          {d.discount && <span className="text-sm">{d.discount}</span>}
+export default function DealStrip() {
+  return (
+    <section className="px-4 py-10">
+      <div className="flex items-center justify-between gap-4">
+        {/* LEFT - badge (same size as chips) */}
+       <div className="text-black text-[30px] font-extrabold whitespace-nowrap">
+        Up to -40% Order.uk exclusive deals
+      </div> 
+
+        {/* RIGHT - border + amber ONLY on hover */}
+        <div className="flex items-center gap-3 overflow-x-auto">
+          {deals.map((d) => (
+            <button
+              key={d.label}
+              className="
+                shrink-0
+                px-4 py-2
+                rounded-full
+                text-gray-700 text-sm = 25px font-semibold   
+                border-transparent
+                bg-transparent
+                hover:border-amber-400
+                hover:bg-amber-400
+                hover:text-white
+                transition
+              "
+            >
+              {d.label}
+            </button>
+          ))}
         </div>
-      ))}
-    </div>
-  </section>
-);
-export default DealStrip;
+      </div>
+    </section>
+  );
+}
