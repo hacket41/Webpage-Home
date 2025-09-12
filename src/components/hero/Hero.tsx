@@ -53,7 +53,7 @@ export default function Hero() {
   );
 }
 
-/* ---------- 3 missing components ---------- */
+/* ---------- 3 missing components for now needs fixing---------- */
 const OrderReceived = () => (
   <div className="mt-6 flex items-center gap-3 text-green-700">
     <span className="text-2xl">✅</span>

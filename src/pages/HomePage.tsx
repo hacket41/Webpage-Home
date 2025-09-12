@@ -28,4 +28,5 @@ const HomePage: React.FC = () => (
     <SiteFooter />
   </div>
 );
+
 export default HomePage;

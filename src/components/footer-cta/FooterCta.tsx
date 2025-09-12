@@ -2,7 +2,6 @@ import React from 'react';
 import ChefImg from '../../assets/Chef.png';
 import CoffeeImg from '../../assets/Coffee.png';
 
-
 export default function FooterCta() {
   return (
     <section className="px-4 py-8 max-w-7xl mx-auto">
