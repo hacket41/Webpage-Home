@@ -11,7 +11,7 @@ const restaurants = [
 ];
 
 const RestaurantStrip: React.FC = () => (
-  <section className="px-4 py-0">
+  <section className="px-25 py-0">
     <h2 className="text-lg font-semibold mb-4">Top Restaurants</h2>
 
     {/* auto-fit grid: no gaps on left/right */}

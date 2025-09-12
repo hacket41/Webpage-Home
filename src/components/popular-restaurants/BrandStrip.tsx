@@ -19,7 +19,7 @@ const brands = [
 
 export default function BrandStrip() {
   return (
-    <section className="px-4 pb-6">
+    <section className="px-25 pb-15">
       <h2 className="text-lg font-semibold mb-4">Popular Restaurants</h2>
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(120px,25vw),1fr))] gap-3">
