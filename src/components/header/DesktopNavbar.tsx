@@ -1,8 +1,8 @@
 import { MapPin, User } from "lucide-react";
 import { useState } from "react";
-import forwardButton from "../../assets/Male User.png";
-import TopLogo from "../../assets/LOGO 1.png";
-import Cart from "../../assets/cart.png";
+import forwardButton from "../../assets/forwardButton.png";
+import Cart from "../../assets/cart2.png";
+import Logo from  "../../assets/LOGO 1.png"
 
 export default function DesktopNavbar() {
   const [selectedCategory, setSelectedCategory] = useState<string>("Home");
@@ -33,8 +33,8 @@ export default function DesktopNavbar() {
   );
 
   return (
-    <div className="hidden lg:block">
-      {/* ---------------- Top Bar ---------------- */}
+    <div className=" hidden lg:block">
+      {/* Top Bar */}
       <div className="bg-[#FAFAFA] flex h-[70px] max-w-screen mr-20 ml-20 text-sm">
         {/* Promo Message */}
         <div className="flex items-center gap-1 flex-1 justify-start px-4">
@@ -55,7 +55,7 @@ export default function DesktopNavbar() {
           </div>
 
           {/* Cart and Profile Section */}
-          <div className="flex bg-green-600 items-center h-full rounded-b-[12px] divide-x divide-white/40 ">
+          <div className="flex bg-green-600 items-center h-full rounded-b-[12px] divide-x divide-white/40">
             {/* Cart Items Count */}
             <div className="flex items-center gap-2 text-white px-3 h-full">
               <img
@@ -83,42 +83,44 @@ export default function DesktopNavbar() {
         </div>
       </div>
 
-      {/* ---------------- Main Navbar ---------------- */}
-    <div className="bg-white px-6 py-4 w-full mt-4">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between">
-        {/* Logo – hard left (original position) */}
-        <img
-          src={TopLogo}
-          alt=""
-          className="w-[215px] h-[53px] object-contain ml-0"
-        />
+      {/* Main Navbar */}
+      <div className="bg-white   px-6 py-4 w-full mt-10">
+        <div className="flex items-center justify-between">
+          {/* Logo (hard left) */}
+          <div>
+            <img
+              src={Logo}
+              alt="logo"
+              className="w-[215px] h-[53px] object-contain ml-23"
+            />
+          </div>
 
-        {/* Right cluster: nav + login – pushed to the right edge of the hero container */}
-        <div className="flex items-center gap-10">
-          {/* Nav Menu */}
-          <nav>
-            <ul className="flex items-center gap-3">
-              {desktopMenuItems.map((item) => (
-                <li key={item}>
-                  <button
-                    onClick={() => setSelectedCategory(item)}
-                    className={`px-5 py-2 rounded-full font-medium transition-colors duration-200 whitespace-nowrap
-                      ${selectedCategory === item
-                        ? "bg-[#FC8A06] text-white"
-                        : "text-gray-700 hover:text-[#FC8A06]"
+          {/* Right side: nav menu + login */}
+          <div className="flex items-center space-x-8 mr-25">
+            {/* Navigation Menu */}
+            <nav>
+              <ul className="flex items-center space-x-6">
+                {desktopMenuItems.map((item: string) => (
+                  <li key={item}>
+                    <button
+                      onClick={() => setSelectedCategory(item)}
+                      className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 whitespace-nowrap ${
+                        selectedCategory === item
+                          ? "bg-[#FC8A06] text-white"
+                          : "text-gray-700 hover:text-[#FC8A06]"
                       }`}
-                  >
-                    {item}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
+                    >
+                      {item}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          {/* Login – hard right */}
-          <button className="bg-gray-900 text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors flex items-center gap-2 whitespace-nowrap">
-            <div className="bg-[#FC8A06] rounded-full w-5 h-5 flex items-center justify-center">
-              <User size={12} />
+            {/* Login/Signup Button */}
+            <button className="bg-gray-900 text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+              <div className="bg-[#FC8A06] rounded-full w-5 h-5 flex items-center justify-center">
+                <User size={12} />
               </div>
               Login/Signup
             </button>
@@ -127,4 +129,4 @@ export default function DesktopNavbar() {
       </div>
     </div>
   );
-} 
+}

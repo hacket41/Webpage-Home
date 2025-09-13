@@ -7,6 +7,7 @@ type Props = {
 };
 
 const RestaurantCard: React.FC<Props> = ({ name, discount, image }) => (
+
   <div className="w-full aspect-[4/3] rounded-xl overflow-hidden relative shadow-md">
     {/* background image or fallback grey */}
     {image ? (
