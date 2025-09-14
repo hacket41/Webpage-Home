@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/header/Navbar';
-import Hero from '../components/hero/Hero';
+import MainHero from '../components/hero/MainHero';
 import CategoryGrid from '../components/categories/CategoryGrid';
 import RestaurantStrip from '../components/restaurants/RestaurantStrip';
 import BrandStrip from '../components/popular-restaurants/BrandStrip';
@@ -13,7 +13,7 @@ import AboutStrip from '../components/about/AboutStrip';
 const HomePage: React.FC = () => (
   <div className="min-h-screen bg-gray-50 pb-20 md:pb-0">
     <Navbar />
-    <Hero />
+    <MainHero />
     <RestaurantStrip />
     <CategoryGrid />
     <BrandStrip />

@@ -1,4 +1,4 @@
-import demoProfile from "../assets/images/demoProfile.png";
+import demoProfile from "../assets/demoProfile.png";
 
 export default function Cart() {
   return (
