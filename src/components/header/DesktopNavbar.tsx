@@ -33,7 +33,7 @@ export default function DesktopNavbar() {
   );
 
   return (
-    <div className=" hidden lg:block">
+    <div className=" container mx-auto hidden lg:block">
       {/* Top Bar */}
       <div className="bg-[#FAFAFA] flex h-[70px] max-w-screen mr-20 ml-20 text-sm">
         {/* Promo Message */}
