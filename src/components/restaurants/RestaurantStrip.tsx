@@ -82,7 +82,7 @@ const DealRestaurantStrip: React.FC = () => {
   return (
     <>
       {/* ======  DEAL STRIP  ====== */}
-      <section className="px-6 py-6 md:px-25 mt-10">
+      <section className="px-6 py-6 md:px-25 mt-10 container mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <h2 className="text-black text-[28px] md:text-[30px] font-extrabold whitespace-nowrap">
             Up to -40% Order.uk exclusive deals
@@ -93,7 +93,7 @@ const DealRestaurantStrip: React.FC = () => {
             <Carousel
               responsive={responsive}
               infinite={false}
-              arrows
+              arrows={false}
               renderArrowLeft={CustomLeftArrow}
               renderArrowRight={CustomRightArrow}
               showDots={false}
@@ -118,7 +118,7 @@ const DealRestaurantStrip: React.FC = () => {
       </section>
 
       {/* ======  RESTAURANT STRIP  ====== */}
-      <section className="px-6 py-0 md:px-25">
+      <section className="px-6 py-0 md:px-25 container mx-auto">
         <h2 className="text-lg font-semibold mb-4">Top Restaurants</h2>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
           {restaurants.map((r) => (

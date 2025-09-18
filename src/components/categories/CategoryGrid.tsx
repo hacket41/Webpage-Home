@@ -61,7 +61,7 @@ const CustomRightArrow = ({ onClick }: any) => (
 
 export default function CategoryGrid() {
   return (
-    <section className="px-6 py-10 md:px-25 md:py-15">
+    <section className="container mx-auto px-6 py-10 md:px-25 md:py-15">
       <h2 className="text-lg font-semibold mb-4">Popular Categories</h2>
 
       {/* ------- MOBILE : carousel with arrows ------- */}
@@ -69,7 +69,7 @@ export default function CategoryGrid() {
         <Carousel
           responsive={responsive}
           infinite={false}
-          arrows
+          arrows={false}
           renderArrowLeft={CustomLeftArrow}
           renderArrowRight={CustomRightArrow}
           showDots={false}

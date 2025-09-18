@@ -1,8 +1,9 @@
+// DesktopNavbar.tsx
 import { MapPin, User } from "lucide-react";
 import { useState } from "react";
 import forwardButton from "../../assets/forwardButton.png";
 import Cart from "../../assets/cart2.png";
-import Logo from  "../../assets/LOGO 1.png"
+import Logo from "../../assets/LOGO 1.png";
 
 export default function DesktopNavbar() {
   const [selectedCategory, setSelectedCategory] = useState<string>("Home");
@@ -16,6 +17,7 @@ export default function DesktopNavbar() {
     "Special Offers",
     "Restaurants",
     "Track Order",
+    "About Us",
   ];
 
   const cartItems: object[] = [
@@ -33,78 +35,66 @@ export default function DesktopNavbar() {
   );
 
   return (
-    <div className=" container mx-auto hidden lg:block">
-      {/* Top Bar */}
-      <div className="bg-[#FAFAFA] flex h-[70px] max-w-screen mr-20 ml-20 text-sm">
-        {/* Promo Message */}
-        <div className="flex items-center gap-1 flex-1 justify-start px-4">
-          <span className="text-yellow-500">⭐</span>
-          <span className="text-gray-700">Get 5% Off your first order.</span>
-          <span className="text-[#FC8A06] font-medium">Promo: ORDER5</span>
-        </div>
-
-        {/* Location & Cart Section */}
-        <div className="flex items-center gap-4 flex-1 justify-end px-4">
-          {/* Location Selector */}
-          <div className="flex items-center gap-2 text-gray-700">
-            <MapPin size={16} />
-            <span>{location}</span>
-            <button className="text-[#FC8A06] hover:underline">
-              Change Location
-            </button>
+    <div className="hidden lg:block">
+      {/* ==========  TOP BAR  ========== */}
+      <div className="bg-[#FAFAFA] h-14 text-xs">
+        <div className="max-w-screen-xl mx-auto px-6 h-full flex items-center justify-between">
+          {/* Promo Message */}
+          <div className="flex items-center gap-1">
+            <span className="text-yellow-500">⭐</span>
+            <span className="text-gray-700">Get 5% Off your first order.</span>
+            <span className="text-[#FC8A06] font-medium">Promo: ORDER5</span>
           </div>
 
-          {/* Cart and Profile Section */}
-          <div className="flex bg-green-600 items-center h-full rounded-b-[12px] divide-x divide-white/40">
-            {/* Cart Items Count */}
-            <div className="flex items-center gap-2 text-white px-3 h-full">
-              <img
-                src={Cart}
-                alt="Cart"
-                className="w-[43px] h-[43px] object-contain"
-              />
-              <span className="font-medium">{totalItems} Items</span>
+          {/* Location & Cart Section */}
+          <div className="flex items-center gap-3">
+            {/* Location Selector */}
+            <div className="flex items-center gap-2 text-gray-700">
+              <MapPin size={14} />
+              <span className="whitespace-nowrap">{location}</span>
+              <button className="text-[#FC8A06] hover:underline">Change</button>
             </div>
 
-            {/* Cart Total */}
-            <div className="flex items-center text-white px-3 h-full">
-              <span className="font-medium">GBP 79.89</span>
-            </div>
-
-            {/* Profile Icon */}
-            <div className="flex items-center justify-center px-3 h-full">
-              <img
-                src={forwardButton}
-                alt="forward"
-                className="w-[38px] h-[38px] object-contain"
-              />
+            {/* Cart Group */}
+            <div className="flex bg-green-600 items-center rounded-b-lg divide-x divide-white/40">
+              <div className="flex items-center gap-2 text-white px-3 h-14">
+                <img src={Cart} alt="Cart" className="w-7 h-7 object-contain" />
+                <span className="font-medium">{totalItems}</span>
+              </div>
+              <div className="flex items-center text-white px-3 h-14 text-sm">
+                GBP 79.89
+              </div>
+              <div className="flex items-center justify-center px-3 h-14">
+                <img
+                  src={forwardButton}
+                  alt="forward"
+                  className="w-6 h-6 object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <div className="bg-white   px-6 py-4 w-full mt-10">
-        <div className="flex items-center justify-between">
-          {/* Logo (hard left) */}
-          <div>
-            <img
-              src={Logo}
-              alt="logo"
-              className="w-[215px] h-[53px] object-contain ml-23"
-            />
-          </div>
+      {/* ==========  MAIN NAVBAR  ========== */}
+      <div className="bg-white shadow-sm">
+        <div className="max-w-screen-xl mx-auto px-5 flex items-center justify-between h-20 mt-5">
+          {/* Logo */}
+          <img
+            src={Logo}
+            alt="logo"
+            className="h-12 w-auto object-contain"
+          />
 
-          {/* Right side: nav menu + login */}
-          <div className="flex items-center space-x-8 mr-25">
-            {/* Navigation Menu */}
+          {/* Nav + Login – tight to logo but right-aligned */}
+          <div className="flex items-center gap-4 ml-auto">
             <nav>
-              <ul className="flex items-center space-x-6">
-                {desktopMenuItems.map((item: string) => (
+              <ul className="flex items-center gap-3">
+                {desktopMenuItems.map((item) => (
                   <li key={item}>
                     <button
                       onClick={() => setSelectedCategory(item)}
-                      className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 whitespace-nowrap ${
+                      className={`px-4 py-2 text-sm rounded-full font-semibold whitespace-nowrap transition-colors ${
                         selectedCategory === item
                           ? "bg-[#FC8A06] text-white"
                           : "text-gray-700 hover:text-[#FC8A06]"
@@ -117,12 +107,11 @@ export default function DesktopNavbar() {
               </ul>
             </nav>
 
-            {/* Login/Signup Button */}
-            <button className="bg-gray-900 text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+            <button className="bg-gray-900 text-white px-4 py-2 text-sm rounded-full font-semibold hover:bg-gray-800 transition-colors flex items-center gap-2">
               <div className="bg-[#FC8A06] rounded-full w-5 h-5 flex items-center justify-center">
                 <User size={12} />
               </div>
-              Login/Signup
+              Login/Sign-Up
             </button>
           </div>
         </div>

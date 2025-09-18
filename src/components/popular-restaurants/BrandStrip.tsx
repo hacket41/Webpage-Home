@@ -56,7 +56,7 @@ const BrandCard = ({ name, image }: Brand) => (
 /* ---------- main component ---------- */
 export default function BrandStrip() {
   return (
-    <section className="px-6 py-10 md:px-25 md:py-15">
+    <section className="container mx-auto px-6 py-10 md:px-25 md:py-15">
       <h2 className="text-lg font-semibold mb-4">Popular Restaurants</h2>
 
       {/* ------- MOBILE : carousel ------- */}
@@ -64,7 +64,7 @@ export default function BrandStrip() {
         <Carousel
           responsive={responsive}
           infinite={false}
-          arrows
+          arrows={false}
           renderArrowLeft={CustomLeftArrow}
           renderArrowRight={CustomRightArrow}
           showDots={false}
