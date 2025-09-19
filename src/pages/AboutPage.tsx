@@ -4,6 +4,7 @@ import Hero from '../aboutcomponents/hero/Hero';
 import History from '../aboutcomponents/history/History';
 import Footer from '../components/stats/SiteFooter';
 import LocationStrip from '../aboutcomponents/locationstrip/LocationStrip';
+import TypeStrip from '../aboutcomponents/type/TypeStrip';
 
 const AboutPage: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const AboutPage: React.FC = () => {
       <Hero />
       <History />
       <LocationStrip />
+      <TypeStrip />
       <Footer />
     </div>
   );
